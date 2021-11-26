@@ -1,18 +1,5 @@
 /** @format */
 import React from "react";
-import { CheckIcon } from "@heroicons/react/solid";
-
-const steps = [
-  { name: "Step 1", href: "#", status: "complete" },
-  { name: "Step 2", href: "#", status: "complete" },
-  { name: "Step 3", href: "#", status: "current" },
-  { name: "Step 4", href: "#", status: "upcoming" },
-  { name: "Step 5", href: "#", status: "upcoming" },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const Education = () => {
   return (

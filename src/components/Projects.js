@@ -4,29 +4,53 @@ import { ExternalLinkIcon } from "@heroicons/react/solid";
 const project = [
   {
     number: "1",
+    title: "MERN Password Manager",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tempore repudiandae eaque iste eius excepturi! Provident aspernatur animi ea assumenda.",
+  },
+  {
+    number: "2",
     imageUrl: "",
     title: "MERN Expense Tracker",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tempore repudiandae eaque iste eius excepturi! Provident aspernatur animi ea assumenda.",
   },
-  // {
-  //   number: "",
-  //   title: "",
-  //   desc: "",
-  // },
 ];
 
 const Projects = () => {
   return (
     <div className='bg-left-bottom bg-cover bg-project-pattern'>
       <div className='px-4 py-4 mx-auto rounded-md max-w-7xl sm:px-6 lg:px-2 '>
+        <svg
+          className='absolute transform right-full translate-y-1/4 translate-x-1/4 lg:translate-x-1/2'
+          width={404}
+          height={784}
+          fill='none'
+          viewBox='0 0 404 784'>
+          <defs>
+            <pattern
+              id='f210dbf6-a58d-4871-961e-36d5016a0f49'
+              x={0}
+              y={0}
+              width={20}
+              height={20}
+              patternUnits='userSpaceOnUse'>
+              <rect
+                x={0}
+                y={0}
+                width={4}
+                height={4}
+                className='text-white'
+                fill='currentColor'
+              />
+            </pattern>
+          </defs>
+          <rect
+            width={404}
+            height={300}
+            fill='url(#f210dbf6-a58d-4871-961e-36d5016a0f49)'
+          />
+        </svg>
         <div className='relative mt-4 mb-6 rounded-md bg-gradient-to-r from-green-400 to-blue-500 ring ring-white ring-offset-2'>
-          <div className='h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2'>
-            <img
-              className='object-cover w-full h-full lg:rounded-l-md'
-              src='https://st4.depositphotos.com/4177785/26739/v/1600/depositphotos_267395888-stock-illustration-travel-expense-tracker-smartphone-interface.jpg'
-              alt=''
-            />
-          </div>
+          <div className='h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2'></div>
           {project.map((project) => (
             <div className='relative px-4 py-12 mx-auto rounded-md shadow-lg max-w-7xl sm:px-6 lg:px-8 lg:py-16 '>
               <div className='md:ml-auto md:w-1/2 md:pl-10'>

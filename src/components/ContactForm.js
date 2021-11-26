@@ -2,11 +2,9 @@
 
 import React from "react";
 
-import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
-
 const ContactForm = () => {
   return (
-    <div className='bg-blue-400'>
+    <div className='bg-left-bottom bg-cover bg-contact-pattern-2 '>
       <div className='px-4 py-12 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8'>
         <div className='relative shadow-xl bg-'>
           <div className='grid grid-cols-1 rounded-md lg:grid-cols-3'>
@@ -43,34 +41,13 @@ const ContactForm = () => {
                 </svg>
               </div>
               <h3 className='text-lg font-medium text-white'>
-                Contact information
+                Contact Information
               </h3>
               <p className='max-w-3xl mt-6 text-base text-indigo-50'>
-                Nullam risus blandit ac aliquam justo ipsum. Quam mauris
-                volutpat massa dictumst amet. Sapien tortor lacus arcu.
+                Please feel free to contact me about employment opportunities
+                here.
               </p>
-              <dl className='mt-8 space-y-6'>
-                <dt>
-                  <span className='sr-only'>Phone number</span>
-                </dt>
-                <dd className='flex text-base text-indigo-50'>
-                  <PhoneIcon
-                    className='flex-shrink-0 w-6 h-6 text-indigo-200'
-                    aria-hidden='true'
-                  />
-                  <span className='ml-3'>+1 (555) 123-4567</span>
-                </dd>
-                <dt>
-                  <span className='sr-only'>Email</span>
-                </dt>
-                <dd className='flex text-base text-indigo-50'>
-                  <MailIcon
-                    className='flex-shrink-0 w-6 h-6 text-indigo-200'
-                    aria-hidden='true'
-                  />
-                  <span className='ml-3'>support@workcation.com</span>
-                </dd>
-              </dl>
+              <dl className='mt-8 space-y-6'></dl>
               <ul className='flex mt-8 space-x-12' role='list'>
                 <li>
                   <a className='text-indigo-200 hover:text-indigo-100' href='#'>
@@ -127,12 +104,18 @@ const ContactForm = () => {
                   </a>
                 </li>
               </ul>
+              <lottie-player
+                src='https://assets5.lottiefiles.com/packages/lf20_fn2gqs3b.json'
+                background='transparent'
+                speed='1'
+                loop
+                autoplay></lottie-player>
             </div>
 
             {/* Contact form */}
             <div className='px-6 py-10 bg-gray-100 sm:px-10 lg:col-span-2 xl:p-12 rounded-b-md md:rounded-r-md lg:rounded-r-md'>
               <h3 className='text-lg font-medium text-gray-900'>
-                Send us a message
+                Send a message
               </h3>
               <form
                 action='#'
@@ -248,7 +231,7 @@ const ContactForm = () => {
                 <div className='sm:col-span-2 sm:flex sm:justify-end'>
                   <button
                     type='submit'
-                    className='inline-flex items-center justify-center w-full px-6 py-3 mt-2 text-base font-medium text-gray-100 bg-blue-600 border border-transparent rounded-md shadow-sm shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 sm:w-auto'>
+                    className='inline-flex items-center justify-center w-full px-6 py-3 mt-2 text-base font-medium text-gray-100 bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 sm:w-auto'>
                     Submit
                   </button>
                 </div>

@@ -9,6 +9,7 @@ module.exports = {
         "hero-pattern": "url('images/hero-pattern.jpg')",
         "project-pattern": "url('images/project-pattern.jpg')",
         "contact-pattern": "url('images/contact-pattern.jpg')",
+        "contact-pattern-2": "url('images/contact-pattern-2.jpg')",
       },
     },
   },

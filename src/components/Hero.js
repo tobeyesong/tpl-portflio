@@ -6,6 +6,8 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
+import "@lottiefiles/lottie-player";
+
 const navigation = [
   { name: "Projects", href: "#" },
   { name: "Resume", href: "#" },
@@ -18,37 +20,13 @@ const Hero = () => {
       <div
         className='hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full'
         aria-hidden='true'>
+        <lottie-player
+          src='https://assets9.lottiefiles.com/packages/lf20_nzz1mpo2.json'
+          background='transparent'
+          speed='1'
+          loop
+          autoplay></lottie-player>
         <div className='relative h-full mx-auto max-w-7xl'>
-          <svg
-            className='absolute transform right-full translate-y-1/4 translate-x-1/4 lg:translate-x-1/2'
-            width={404}
-            height={784}
-            fill='none'
-            viewBox='0 0 404 784'>
-            <defs>
-              <pattern
-                id='f210dbf6-a58d-4871-961e-36d5016a0f49'
-                x={0}
-                y={0}
-                width={20}
-                height={20}
-                patternUnits='userSpaceOnUse'>
-                <rect
-                  x={0}
-                  y={0}
-                  width={4}
-                  height={4}
-                  className='text-blue-400'
-                  fill='currentColor'
-                />
-              </pattern>
-            </defs>
-            <rect
-              width={404}
-              height={300}
-              fill='url(#f210dbf6-a58d-4871-961e-36d5016a0f49)'
-            />
-          </svg>
           <svg
             className='absolute transform animate-pulse left-full -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2'
             width={404}
@@ -68,7 +46,7 @@ const Hero = () => {
                   y={0}
                   width={4}
                   height={4}
-                  className='text-green-300'
+                  className='text-white'
                   fill='currentColor'
                 />
               </pattern>
