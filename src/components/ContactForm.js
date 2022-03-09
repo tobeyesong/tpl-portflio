@@ -94,6 +94,7 @@ const ContactForm = () => {
                 onSubmit={onSubmit}
                 render={({ handleSubmit, submitError }) => (
                   <form onSubmit={handleSubmit} name='contact' method='post'>
+                    <input type='hidden' name='form-name' value='contact' />
                     <div className='mt-6 space-y-8 rounded-b-md sm:space-y-5'>
                       <div>
                         <div className=''>
