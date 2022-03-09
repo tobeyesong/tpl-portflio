@@ -85,7 +85,12 @@ const ContactForm = () => {
               <Form
                 onSubmit={onSubmit}
                 render={({ handleSubmit, submitError }) => (
-                  <form onSubmit={handleSubmit}>
+                  <form
+                    onSubmit={handleSubmit}
+                    name='contactv1'
+                    method='post'
+                    data-netlify='true'>
+                    <input type='hidden' name='contactv1' value='' />
                     <div className='mt-6 space-y-8 rounded-b-md sm:space-y-5'>
                       <div>
                         <div className=''>
@@ -294,7 +299,7 @@ const ContactForm = () => {
 
                         <div className='mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense'>
                           <button
-                            type='button'
+                            type='submit'
                             className='inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-indigo-500 sm:col-start-2 sm:text-sm'>
                             Send
                           </button>
