@@ -26,7 +26,9 @@ const Skills = () => {
         <div className='px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <div className='grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-4 '>
             {skillset.map((skillset) => (
-              <div className='flex justify-center col-span-1 py-2 text-xl transition duration-200 ease-in transform border-2 border-t-4 border-blue-600 border-opacity-75 rounded-md shadow hover:border-green-600 hover:-translate-y-2 lg:rounded-md hover:shadow-lg hover:animate-pulse md:col-span-2 lg:col-span-1'>
+              <div
+                key={skillset.logoUrl}
+                className='flex justify-center col-span-1 py-2 text-xl transition duration-200 ease-in transform border-2 border-t-4 border-blue-600 border-opacity-75 rounded-md shadow hover:border-green-600 hover:-translate-y-2 lg:rounded-md hover:shadow-lg hover:animate-pulse md:col-span-2 lg:col-span-1'>
                 <img className='h-12 ' src={skillset.logoUrl} alt='Tuple' />{" "}
               </div>
             ))}

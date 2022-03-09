@@ -1,20 +1,29 @@
 /** @format */
 /* This example requires Tailwind CSS v2.0+ */
 
-import React from "react";
-import { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
+import {
+  MenuIcon,
+  XIcon,
+  TerminalIcon,
+  ClipboardListIcon,
+} from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 import "@lottiefiles/lottie-player";
 
 const navigation = [
-  { name: "Projects", href: "#" },
-  { name: "Resume", href: "#" },
-  // { name: "Contact", href: "#" },
+  {
+    name: "Projects",
+    href: "/projects",
+    icon: <TerminalIcon className='w-6 h-6 mr-2 -ml-1' aria-hidden='true' />,
+  },
 ];
 
 const Hero = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='relative bg-center bg-cover bg-hero-pattern '>
       <div
@@ -26,38 +35,6 @@ const Hero = () => {
           speed='1'
           loop
           autoplay></lottie-player>
-        <div className='relative h-full mx-auto max-w-7xl'>
-          <svg
-            className='absolute transform animate-pulse left-full -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2'
-            width={404}
-            height={784}
-            fill='none'
-            viewBox='0 0 404 784'>
-            <defs>
-              <pattern
-                id='5d0dd344-b041-4d26-bec4-8d33ea57ec9b'
-                x={0}
-                y={0}
-                width={20}
-                height={20}
-                patternUnits='userSpaceOnUse'>
-                <rect
-                  x={0}
-                  y={0}
-                  width={4}
-                  height={4}
-                  className='text-white'
-                  fill='currentColor'
-                />
-              </pattern>
-            </defs>
-            <rect
-              width={404}
-              height={650}
-              fill='url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)'
-            />
-          </svg>
-        </div>
       </div>
 
       <div className='relative pt-6 pb-16 sm:pb-24'>
@@ -74,27 +51,40 @@ const Hero = () => {
                         <span className='sr-only'>Workflow</span>
                         <img
                           className='w-auto h-12 lg:h-14 sm:h-10 hover:opacity-75'
-                          src='https://media.publit.io/file/portflio-icon.svg'
+                          src='https://media.publit.io/file/tplport/noun_coding_2985075-1.svg'
                           alt=''
                         />
                       </a>
-                      <div className='flex items-center -mr-2 md:hidden'>
-                        <Popover.Button className='inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+                      <div className='flex items-center -mr-2 shadow-inner md:hidden'>
+                        <Popover.Button className='inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
                           <span className='sr-only'>Open main menu</span>
                           <MenuIcon className='w-6 h-6' aria-hidden='true' />
                         </Popover.Button>
                       </div>
                     </div>
                   </div>
+
                   <div className='hidden md:flex md:space-x-10 '>
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
-                        className='p-2 text-xl font-medium text-white underline hover:text-green-600'>
+                        to={item.href}
+                        type='button'
+                        className='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 transition duration-200 ease-in transform bg-white border border-transparent rounded-md shadow-sm hover:bg-red-700 hover:text-white '>
+                        {item.icon}
+
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
+                    <a
+                      href='https://docs.google.com/document/d/1iSXJaoUHWxuOqHIUMb93Y56xuw0JUHCwKhqzKuQLjYY/edit?usp=sharing'
+                      className='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 transition duration-200 ease-in transform bg-white border border-transparent rounded-md shadow-sm hover:bg-red-700 hover:text-white '>
+                      <ClipboardListIcon
+                        className='w-6 h-6 mr-2 -ml-1'
+                        aria-hidden='true'
+                      />
+                      Resume
+                    </a>
                   </div>
                 </nav>
               </div>
@@ -117,7 +107,7 @@ const Hero = () => {
                       <div>
                         <img
                           className='w-auto h-8'
-                          src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
+                          src='https://media.publit.io/file/tplport/noun_coding_2985075-1.svg'
                           alt=''
                         />
                       </div>
@@ -137,10 +127,16 @@ const Hero = () => {
                           {item.name}
                         </a>
                       ))}
+
+                      <a
+                        href='https://docs.google.com/document/d/1iSXJaoUHWxuOqHIUMb93Y56xuw0JUHCwKhqzKuQLjYY/edit?usp=sharing'
+                        className='block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50'>
+                        Resume
+                      </a>
                     </div>
                     <a
                       href='#'
-                      className='block w-full px-5 py-3 font-medium text-center text-indigo-600 bg-indigo-100'></a>
+                      className='block w-full px-5 py-3 font-medium text-center text-indigo-600 bg-red-600'></a>
                   </div>
                 </Popover.Panel>
               </Transition>
@@ -161,18 +157,18 @@ const Hero = () => {
 
             <div className='max-w-md mx-auto mt-5 sm:flex sm:justify-center md:mt-8'>
               <div className=''>
-                <a
-                  href='#'
-                  className='flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white transition ease-in-out bg-green-600 border border-transparent rounded-md filter drop-shadow-lg hover:bg-green-700 md:py-4 md:text-lg md:px-10'>
+                <Link
+                  to='/contact'
+                  className='flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white transition ease-in-out bg-red-600 border border-transparent rounded-md filter drop-shadow-lg hover:bg-red-700 md:py-4 md:text-lg md:px-10'>
                   Contact
-                </a>
+                </Link>
               </div>
               <div className='mt-3 shadow sm:mt-0 sm:ml-3'>
-                <a
-                  href='#'
-                  className='flex items-center justify-center w-full px-8 py-3 text-base font-medium text-green-600 bg-white border border-transparent rounded-md filter drop-shadow-lg hover:bg-gray-50 md:py-4 md:text-lg md:px-10'>
+                <Link
+                  to='/about'
+                  className='flex items-center justify-center w-full px-6 py-3 text-base font-medium text-green-600 bg-white border border-transparent rounded-md filter drop-shadow-lg hover:bg-gray-100 md:py-4 md:text-lg md:px-10'>
                   About
-                </a>
+                </Link>
               </div>
             </div>
           </div>
