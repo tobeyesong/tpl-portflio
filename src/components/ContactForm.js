@@ -83,17 +83,15 @@ const ContactForm = () => {
                 Send a message
               </h3>
 
-              {/* <!-- A little help for the Netlify bots if you're not using a SSG --> */}
-              <form name='contact' netlify netlify-honeypot='bot-field' hidden>
-                <input type='text' name='name' />
-                <input type='text' name='email' />
-                <input type='text' name='subject' />
-                <textarea name='message'></textarea>
-              </form>
               <Form
                 onSubmit={onSubmit}
                 render={({ handleSubmit, submitError }) => (
-                  <form onSubmit={handleSubmit} name='contact' method='post'>
+                  <form
+                    onSubmit={handleSubmit}
+                    name='contact'
+                    method='POST'
+                    data-netlify='true'>
+                    <input type='hidden' name='form-name' value='contact' />
                     <input type='hidden' name='form-name' value='contact' />
                     <div className='mt-6 space-y-8 rounded-b-md sm:space-y-5'>
                       <div>

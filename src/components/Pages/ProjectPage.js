@@ -182,7 +182,7 @@ const ProjectPage = () => {
         <div className='relative px-4 py-4 mx-auto rounded-md bg-slate-100 max-w-7xl sm:py-8 sm:px-6 lg:px-8 '>
           <ul role='list' className='flex divide-y lg:flex lg:items-center'>
             {passManImages.map((passManImage) => (
-              <li key={passManImage} className=' snap-x cover'>
+              <li key={passManImage.url} className=' snap-x cover'>
                 <div className='space-y-4 snap-center '>
                   <img className='' src={passManImage.url} alt='screenshots' />
                 </div>
@@ -216,7 +216,7 @@ const ProjectPage = () => {
               role='list'
               className='grid grid-cols-2 mx-auto gap-x-4 gap-y-8 sm:grid-cols-5 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-5'>
               {techTwo.map((tech) => (
-                <div key={tech.name}>
+                <div key={tech.imageUrl}>
                   <div className='space-y-4'>
                     <img
                       className='flex justify-center object-scale-down w-20 h-20 col-span-1 py-2 mx-auto my-auto ml-auto mr-auto text-xl transition duration-200 ease-in transform rounded-md shadow md:w-full md:h-full hover:border-green-600 hover:-translate-y-2 lg:rounded-md hover:shadow-lg hover:animate-pulse md:col-span-2 lg:col-span-1 sm:w-12 sm:h-12 lg:w-24 lg:h-24'
@@ -250,7 +250,7 @@ const ProjectPage = () => {
             role='list'
             className='flex items-center divide-y divide-gray-200 '>
             {mintCloneImages.map((mintCloneImage) => (
-              <li key={mintCloneImage} className='snap-x cover'>
+              <li key={mintCloneImage.url}>
                 <div className='space-y-4 snap-center '>
                   <img
                     className=''
