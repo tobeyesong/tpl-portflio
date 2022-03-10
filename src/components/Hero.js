@@ -123,7 +123,8 @@ const Hero = () => {
                         <Link
                           key={item.href}
                           to={item.href}
-                          className='block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50'>
+                          type='button'
+                          className='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 transition duration-200 ease-in transform bg-white border border-transparent rounded-md shadow-sm hover:bg-red-700 hover:text-white '>
                           {item.name}
                         </Link>
                       ))}

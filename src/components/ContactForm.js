@@ -111,6 +111,7 @@ const ContactForm = () => {
                                   </label>
                                   <input
                                     type='text'
+                                    name='name'
                                     {...input}
                                     placeholder={placeholder}
                                     className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow md:w-3/4 lg:w-3/4 text-l focus:outline-none focus:border-blue-500'
@@ -172,6 +173,7 @@ const ContactForm = () => {
                                   </label>
                                   <input
                                     type='text'
+                                    name='email'
                                     {...input}
                                     placeholder={placeholder}
                                     className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow md:w-3/4 lg:w-3/4 text-l focus:outline-none focus:border-blue-500'
@@ -231,6 +233,7 @@ const ContactForm = () => {
                                 </label>
                                 <input
                                   type='text'
+                                  name='subject'
                                   {...input}
                                   placeholder={placeholder}
                                   className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow text-l focus:outline-none focus:border-blue-500'
@@ -272,6 +275,7 @@ const ContactForm = () => {
                                 </label>
                                 <textarea
                                   type='text'
+                                  name='message'
                                   rows='8'
                                   {...input}
                                   placeholder={placeholder}
