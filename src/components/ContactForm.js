@@ -84,7 +84,6 @@ const ContactForm = () => {
               </h3>
 
               <Form
-                onSubmit={onSubmit}
                 render={({ handleSubmit, submitError }) => (
                   <form
                     onSubmit={handleSubmit}
