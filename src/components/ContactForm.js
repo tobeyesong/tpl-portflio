@@ -20,6 +20,7 @@ const ContactForm = () => {
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
+    return false;
   };
   return (
     <div className='relative p-10 bg-opacity-50 bg-right-bottom bg-cover bg-contact-pattern-2 '>
