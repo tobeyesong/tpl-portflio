@@ -16,12 +16,10 @@ const ContactForm = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
+      body: encode({ "form-name": "contact", ...values }),
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
-
-    values.preventDefault();
   };
   return (
     <div className='relative p-10 bg-opacity-50 bg-right-bottom bg-cover bg-contact-pattern-2 '>
