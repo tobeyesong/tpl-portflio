@@ -6,9 +6,22 @@ import { XCircleIcon } from "@heroicons/react/solid";
 import { FaStackOverflow, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 const required = (value) => (value ? undefined : "Required");
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 const ContactForm = () => {
   const onSubmit = (values) => {
-    console.log(values);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
+    values.preventDefault();
   };
   return (
     <div className='relative p-10 bg-opacity-50 bg-right-bottom bg-cover bg-contact-pattern-2 '>
@@ -84,13 +97,13 @@ const ContactForm = () => {
               </h3>
 
               <Form
+                onSubmit={onSubmit}
                 render={({ handleSubmit, submitError }) => (
                   <form
                     onSubmit={handleSubmit}
                     name='contact'
                     method='POST'
                     data-netlify='true'>
-                    <input type='hidden' name='form-name' value='contact' />
                     <input type='hidden' name='form-name' value='contact' />
                     <div className='mt-6 space-y-8 rounded-b-md sm:space-y-5'>
                       <div>
