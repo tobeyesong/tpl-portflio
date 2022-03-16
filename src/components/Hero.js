@@ -37,7 +37,7 @@ const Hero = () => {
           autoplay></lottie-player>
       </div>
 
-      <div className='relative pt-6 pb-16 sm:pb-24'>
+      <div className='relative pt-6 pb-8 sm:pb-24'>
         <Popover>
           {({ open }) => (
             <>
@@ -56,7 +56,7 @@ const Hero = () => {
                         />
                       </a>
                       <div className='flex items-center -mr-2 shadow-inner md:hidden'>
-                        <Popover.Button className='inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+                        <Popover.Button className='inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-inset '>
                           <span className='sr-only'>Open main menu</span>
                           <MenuIcon className='w-6 h-6' aria-hidden='true' />
                         </Popover.Button>
@@ -145,7 +145,7 @@ const Hero = () => {
           )}
         </Popover>
 
-        <main className='px-4 mx-auto mt-16 max-w-7xl sm:mt-24 '>
+        <main className='px-4 m-4 mx-auto max-w-7xl sm:mt-24 '>
           <div className='p-4 text-center border-white rounded-md shadow-xl md:backdrop-filter lg:backdrop-filter md:backdrop-blur lg:backdrop-blur-md heropattern-texture-gray-100'>
             <h1 className='text-4xl tracking-tight text-center text-white uppercase sm:text-5xl md:text-6xl'>
               <span className='block text-green-400 xl:inline'>

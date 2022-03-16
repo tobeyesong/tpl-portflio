@@ -6,6 +6,7 @@ import LandingPage from "./Pages/LandingPage";
 import ProjectPage from "./Pages/ProjectPage";
 import AboutModal from "./Modals/AboutModal";
 import ContactModal from "./Modals/ContactModal";
+import MessageModal from "./Modals/MessageModal";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/projects' element={<ProjectPage />} />
         <Route path='/about' element={<AboutModal />} />
         <Route path='/contact' element={<ContactModal />} />
+        <Route path='/thanks' element={<MessageModal />} />
       </Routes>
     </Router>
   );

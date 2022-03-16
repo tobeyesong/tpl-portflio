@@ -4,6 +4,7 @@ import React from "react";
 import { Form, Field } from "react-final-form";
 import { XCircleIcon } from "@heroicons/react/solid";
 import { FaStackOverflow, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const required = (value) => (value ? undefined : "Required");
 
 const encode = (data) => {
@@ -12,13 +13,14 @@ const encode = (data) => {
     .join("&");
 };
 const ContactForm = () => {
+  const navigate = useNavigate();
   const onSubmit = (values) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...values }),
     })
-      .then(() => alert("Success!"))
+      .then(() => navigate("/thanks"))
       .catch((error) => alert(error));
   };
   return (
@@ -96,6 +98,20 @@ const ContactForm = () => {
 
               <Form
                 onSubmit={onSubmit}
+                validate={(values) => {
+                  const errors = {};
+                  if (values.email !== "undefined") {
+                    var pattern = new RegExp(
+                      /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+                    );
+
+                    if (!pattern.test(values.email)) {
+                      errors.email = "Please enter valid email address.";
+                    }
+                  }
+
+                  return errors;
+                }}
                 render={({ handleSubmit, submitError }) => (
                   <form
                     onSubmit={handleSubmit}

@@ -5,18 +5,32 @@ import { Form, Field } from "react-final-form";
 import { XCircleIcon } from "@heroicons/react/solid";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-
+import { useNavigate } from "react-router-dom";
 import LandingPage from "../Pages/LandingPage";
 
 import { Navigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const required = (value) => (value ? undefined : "Required");
-const onSubmit = (values) => {
-  console.log(values);
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 };
 const ContactModal = () => {
-  const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
+  const onSubmit = (values) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values }),
+    })
+      .then(() => navigate("/"))
+      .then(() => toast.success("Message Sent. Thank you."))
+      .catch((error) => alert(error));
+  };
 
+  const [open, setOpen] = useState(true);
   const cancelButtonRef = useRef(null);
   if (!open) {
     return <Navigate to='/' />;
@@ -49,6 +63,7 @@ const ContactModal = () => {
                 aria-hidden='true'>
                 &#8203;
               </span>
+
               <Transition.Child
                 as={Fragment}
                 enter='ease-out duration-300'
@@ -62,10 +77,34 @@ const ContactModal = () => {
                     <h3 className='text-lg font-medium text-gray-900'>
                       Send a message
                     </h3>
+
                     <Form
                       onSubmit={onSubmit}
+                      validate={(values) => {
+                        const errors = {};
+                        if (values.email !== "undefined") {
+                          var pattern = new RegExp(
+                            /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+                          );
+
+                          if (!pattern.test(values.email)) {
+                            errors.email = "Please enter valid email address.";
+                          }
+                        }
+
+                        return errors;
+                      }}
                       render={({ handleSubmit, submitError }) => (
-                        <form onSubmit={handleSubmit}>
+                        <form
+                          onSubmit={handleSubmit}
+                          name='contact'
+                          method='POST'
+                          data-netlify='true'>
+                          <input
+                            type='hidden'
+                            name='form-name'
+                            value='contact'
+                          />
                           <div className='mt-6 space-y-8 rounded-b-md sm:space-y-5'>
                             <div>
                               <div className=''>
@@ -84,6 +123,7 @@ const ContactModal = () => {
                                         </label>
                                         <input
                                           type='text'
+                                          name='name'
                                           {...input}
                                           placeholder={placeholder}
                                           className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow md:w-3/4 lg:w-3/4 text-l focus:outline-none focus:border-blue-500'
@@ -145,6 +185,7 @@ const ContactModal = () => {
                                         </label>
                                         <input
                                           type='text'
+                                          name='email'
                                           {...input}
                                           placeholder={placeholder}
                                           className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow md:w-3/4 lg:w-3/4 text-l focus:outline-none focus:border-blue-500'
@@ -204,6 +245,7 @@ const ContactModal = () => {
                                       </label>
                                       <input
                                         type='text'
+                                        name='subject'
                                         {...input}
                                         placeholder={placeholder}
                                         className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow text-l focus:outline-none focus:border-blue-500'
@@ -245,6 +287,7 @@ const ContactModal = () => {
                                       </label>
                                       <textarea
                                         type='text'
+                                        name='message'
                                         rows='8'
                                         {...input}
                                         placeholder={placeholder}
@@ -271,27 +314,19 @@ const ContactModal = () => {
                                   </div>
                                 )}
                               </Field>
+
+                              <div className='mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense'>
+                                <button
+                                  type='submit'
+                                  className='inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-indigo-500 sm:col-start-2 sm:text-sm'>
+                                  Send
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </form>
                       )}
                     />
-                  </div>
-
-                  <div className='mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense'>
-                    <button
-                      type='button'
-                      className='inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-indigo-500 sm:col-start-2 sm:text-sm'
-                      onClick={() => setOpen(false)}>
-                      Send
-                    </button>
-                    <button
-                      type='button'
-                      className='inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-blue-500 sm:mt-0 sm:col-start-1 sm:text-sm'
-                      onClick={() => setOpen(false)}
-                      ref={cancelButtonRef}>
-                      Cancel
-                    </button>
                   </div>
                 </div>
               </Transition.Child>

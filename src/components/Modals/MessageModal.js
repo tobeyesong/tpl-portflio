@@ -1,234 +1,85 @@
-/** @format */
+/**
+ * /* This example requires Tailwind CSS v2.0+
+ *
+ * @format
+ */
 
-// /** @format */
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { MailIcon } from "@heroicons/react/solid";
+import { useNavigate } from "react-router-dom";
+import LandingPage from "../Pages/LandingPage";
 
-// import React from "react";
-// import { Form, Field } from "react-final-form";
-// import { XCircleIcon } from "@heroicons/react/solid";
+export default function MessageModal() {
+  const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
+  if (!open) {
+    navigate("/");
+  }
+  return (
+    <div>
+      <LandingPage />
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog
+          as='div'
+          className='fixed inset-0 z-10 overflow-y-auto'
+          onClose={setOpen}>
+          <div className='flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0'>
+            <Transition.Child
+              as={Fragment}
+              enter='ease-out duration-300'
+              enterFrom='opacity-0'
+              enterTo='opacity-100'
+              leave='ease-in duration-200'
+              leaveFrom='opacity-100'
+              leaveTo='opacity-0'>
+              <Dialog.Overlay className='fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75' />
+            </Transition.Child>
 
-// const required = (value) => (value ? undefined : "Required");
+            {/* This element is to trick the browser into centering the modal contents. */}
+            <span
+              className='hidden sm:inline-block sm:align-middle sm:h-screen'
+              aria-hidden='true'>
+              &#8203;
+            </span>
+            <Transition.Child
+              as={Fragment}
+              enter='ease-out duration-300'
+              enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+              enterTo='opacity-100 translate-y-0 sm:scale-100'
+              leave='ease-in duration-200'
+              leaveFrom='opacity-100 translate-y-0 sm:scale-100'
+              leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'>
+              <div className='relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6'>
+                <div>
+                  <div className='flex items-center justify-center w-12 h-12 mx-auto bg-green-100 rounded-full'>
+                    <MailIcon className='w-6 h-6 text-green-600' />
+                  </div>
 
-// export const MessageModal = () => {
-//   return (
-//     <div>
-//       <div className='px-6 py-10 bg-gray-100 sm:px-10 lg:col-span-2 xl:p-12 rounded-b-md md:rounded-r-md lg:rounded-r-md'>
-//         <h3 className='text-lg font-medium text-gray-900'>Send a message</h3>
-//         <Form
-//           onSubmit={onSubmit}
-//           render={({ handleSubmit, submitError }) => (
-//             <form onSubmit={handleSubmit}>
-//               <div className='mt-6 space-y-8 rounded-b-md sm:space-y-5'>
-//                 <div>
-//                   <div className=''>
-//                     <Field
-//                       name='name'
-//                       component='input'
-//                       placeholder=''
-//                       validate={required}>
-//                       {({ input, meta, placeholder }) => (
-//                         <div className='col-span-6 sm:col-span-3'>
-//                           <div>
-//                             <label
-//                               htmlFor='name'
-//                               className='block text-sm font-medium text-gray-700'>
-//                               Name
-//                             </label>
-//                             <input
-//                               type='text'
-//                               {...input}
-//                               npm
-//                               placeholder={placeholder}
-//                               className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow md:w-3/4 lg:w-3/4 text-l focus:outline-none focus:border-blue-500'
-//                             />
-//                           </div>
-//                           {meta.error && meta.touched && (
-//                             <div className='w-full p-1 mt-1 mb-2 transition duration-500 ease-in-out rounded-md md:w-3/4 lg:w-3/4 sm:col-span-3 bg-red-50'>
-//                               <div className='flex'>
-//                                 <div className='flex-shrink-0'>
-//                                   <XCircleIcon
-//                                     className='w-5 h-5 text-red-400'
-//                                     aria-hidden='true'
-//                                   />
-//                                 </div>
-//                                 <div className='ml-3'>
-//                                   <h3 className='text-sm font-medium text-red-800'>
-//                                     {meta.error}
-//                                   </h3>
-//                                 </div>
-//                               </div>
-//                             </div>
-//                           )}
-//                         </div>
-//                       )}
-//                     </Field>
-
-//                     {submitError && (
-//                       <div className='p-1 mt-1 mb-2 transition duration-500 ease-in-out rounded-md bg-red-50'>
-//                         <div className='flex'>
-//                           <div className='flex-shrink-0'>
-//                             <XCircleIcon
-//                               className='w-5 h-5 text-red-400'
-//                               aria-hidden='true'
-//                             />
-//                           </div>
-//                           <div className='ml-3'>
-//                             <h3 className='text-sm font-medium text-red-800'>
-//                               {submitError}
-//                             </h3>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     )}
-//                   </div>
-
-//                   <div>
-//                     <Field
-//                       name='email'
-//                       component='input'
-//                       placeholder=''
-//                       validate={required}>
-//                       {({ input, meta, placeholder }) => (
-//                         <div className='col-span-6 sm:col-span-3'>
-//                           <div>
-//                             <label
-//                               htmlFor='email'
-//                               className='block text-sm font-medium text-gray-700'>
-//                               E-mail
-//                             </label>
-//                             <input
-//                               type='text'
-//                               {...input}
-//                               placeholder={placeholder}
-//                               className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow md:w-3/4 lg:w-3/4 text-l focus:outline-none focus:border-blue-500'
-//                             />
-//                           </div>
-//                           {meta.error && meta.touched && (
-//                             <div className='w-full p-1 mt-1 mb-2 transition duration-500 ease-in-out rounded-md md:w-3/4 lg:w-3/4 sm:col-span-3 bg-red-50'>
-//                               <div className='flex'>
-//                                 <div className='flex-shrink-0'>
-//                                   <XCircleIcon
-//                                     className='w-5 h-5 text-red-400'
-//                                     aria-hidden='true'
-//                                   />
-//                                 </div>
-//                                 <div className='ml-3'>
-//                                   <h3 className='text-sm font-medium text-red-800'>
-//                                     {meta.error}
-//                                   </h3>
-//                                 </div>
-//                               </div>
-//                             </div>
-//                           )}
-//                         </div>
-//                       )}
-//                     </Field>
-
-//                     {submitError && (
-//                       <div className='p-1 mt-1 mb-2 transition duration-500 ease-in-out rounded-md bg-red-50'>
-//                         <div className='flex'>
-//                           <div className='flex-shrink-0'>
-//                             <XCircleIcon
-//                               className='w-5 h-5 text-red-400'
-//                               aria-hidden='true'
-//                             />
-//                           </div>
-//                           <div className='ml-3'>
-//                             <h3 className='text-sm font-medium text-red-800'>
-//                               {submitError}
-//                             </h3>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     )}
-//                   </div>
-//                   <Field
-//                     name='subject'
-//                     component='input'
-//                     placeholder=''
-//                     validate={required}>
-//                     {({ input, meta, placeholder }) => (
-//                       <div className='col-span-6 sm:col-span-3'>
-//                         <div>
-//                           <label
-//                             htmlFor='subject'
-//                             className='block text-sm font-medium text-gray-700'>
-//                             Subject
-//                           </label>
-//                           <input
-//                             type='text'
-//                             {...input}
-//                             placeholder={placeholder}
-//                             className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow text-l focus:outline-none focus:border-blue-500'
-//                           />
-//                         </div>
-//                         {meta.error && meta.touched && (
-//                           <div className='col-span-6 p-1 mt-1 mb-2 transition duration-500 ease-in-out rounded-md sm:col-span-3 bg-red-50'>
-//                             <div className='flex'>
-//                               <div className='flex-shrink-0'>
-//                                 <XCircleIcon
-//                                   className='w-5 h-5 text-red-400'
-//                                   aria-hidden='true'
-//                                 />
-//                               </div>
-//                               <div className='ml-3'>
-//                                 <h3 className='text-sm font-medium text-red-800'>
-//                                   {meta.error}
-//                                 </h3>
-//                               </div>
-//                             </div>
-//                           </div>
-//                         )}
-//                       </div>
-//                     )}
-//                   </Field>
-
-//                   <Field
-//                     name='message'
-//                     component='textarea'
-//                     validate={required}
-//                     className='block w-full h-32 p-4 px-4 py-2 pl-1 mb-2 border-gray-300 rounded-md shadow text-l focus:outline-none border-gray focus:border-blue-500'>
-//                     {({ input, meta, placeholder }) => (
-//                       <div className='col-span-6 sm:col-span-3'>
-//                         <div>
-//                           <label
-//                             htmlFor='message'
-//                             className='block text-sm font-medium text-gray-700'>
-//                             Message
-//                           </label>
-//                           <textarea
-//                             type='text'
-//                             rows='8'
-//                             {...input}
-//                             placeholder={placeholder}
-//                             className='block w-full px-4 py-2 pl-1 mb-2 rounded-md shadow text-l focus:outline-none focus:border-blue-500'
-//                           />
-//                         </div>
-//                         {meta.error && meta.touched && (
-//                           <div className='col-span-6 p-1 mt-1 mb-2 transition duration-500 ease-in-out rounded-md sm:col-span-3 bg-red-50'>
-//                             <div className='flex'>
-//                               <div className='flex-shrink-0'>
-//                                 <XCircleIcon
-//                                   className='w-5 h-5 text-red-400'
-//                                   aria-hidden='true'
-//                                 />
-//                               </div>
-//                               <div className='ml-3'>
-//                                 <h3 className='text-sm font-medium text-red-800'>
-//                                   {meta.error}
-//                                 </h3>
-//                               </div>
-//                             </div>
-//                           </div>
-//                         )}
-//                       </div>
-//                     )}
-//                   </Field>
-//                 </div>
-//               </div>
-//             </form>
-//           )}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
+                  <div className='mt-3 text-center sm:mt-5'>
+                    <Dialog.Title
+                      as='h3'
+                      className='text-lg font-medium leading-6 text-gray-900'>
+                      Message Sent
+                    </Dialog.Title>
+                    <div className='mt-2'>
+                      <p className='text-sm text-gray-500'>Thank You.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className='mt-5 sm:mt-6'>
+                  <button
+                    type='button'
+                    className='inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm outline-none bg-emerald-600 hover:bg-emerald-700 sm:text-sm'
+                    onClick={() => setOpen(false)}>
+                    Return
+                  </button>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition.Root>
+    </div>
+  );
+}
