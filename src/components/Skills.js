@@ -18,7 +18,7 @@ const Skills = () => {
   return (
     <div className='relative '>
       <div className='bg-white '>
-        <div className='px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:py-8 lg:px-8'></div>
+        <div className='px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:py-8 lg:px-8'></div>
         <p className='text-base font-semibold tracking-wider text-center text-gray-600 uppercase lg:text-2xl'>
           My skillset is the MERN stack
         </p>

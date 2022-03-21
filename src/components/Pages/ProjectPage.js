@@ -166,7 +166,7 @@ const ProjectPage = () => {
 
           <div className='mt-3 shadow sm:mt-0 '>
             <a
-              href=''
+              href='https://passmanmern.herokuapp.com/'
               className='flex items-center justify-center py-2 font-medium text-gray-900 uppercase bg-cyan-100 hover:bg-cyan-500 hover:text-white rounded-t-md '>
               Live Site
             </a>
@@ -179,7 +179,7 @@ const ProjectPage = () => {
           </div>
         </div>
 
-        <div className='relative px-4 py-4 mx-auto rounded-md bg-slate-100 max-w-7xl sm:py-8 sm:px-6 lg:px-8 '>
+        <div className='relative hidden px-4 py-4 mx-auto rounded-md lg:block md:block sm:block bg-slate-100 max-w-7xl sm:py-8 sm:px-6 lg:px-8 '>
           <ul role='list' className='flex divide-y lg:flex lg:items-center'>
             {passManImages.map((passManImage) => (
               <li key={passManImage.url} className=' snap-x cover'>
@@ -245,7 +245,7 @@ const ProjectPage = () => {
         </div>
         {/* BLENDED BACKGROUND */}
 
-        <div className='relative px-4 py-4 mx-auto rounded-md max-w-7xl sm:py-8 sm:px-6 lg:px-8'>
+        <div className='relative hidden px-4 py-4 mx-auto rounded-md lg:block md:block sm:block max-w-7xl sm:py-8 sm:px-6 lg:px-8'>
           <ul
             role='list'
             className='flex items-center divide-y divide-gray-200 '>
