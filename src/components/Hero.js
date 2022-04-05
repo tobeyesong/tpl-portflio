@@ -111,7 +111,7 @@ const Hero = () => {
                           alt=''
                         />
                       </div>
-                      <div className='-mr-2'>
+                      <div className='-mr-2 '>
                         <Popover.Button className='inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
                           <span className='sr-only'>Close menu</span>
                           <XIcon className='w-6 h-6' aria-hidden='true' />
@@ -148,7 +148,7 @@ const Hero = () => {
         <main className='px-4 py-2 m-4 mx-auto max-w-7xl sm:mt-24 '>
           <div className='p-6 text-center rounded-md shadow-xl lg:p-8 md:p-7 md:backdrop-filter lg:backdrop-filter md:backdrop-blur lg:backdrop-blur-md heropattern-texture-gray-100'>
             <h1 className='text-4xl tracking-tight text-center text-white uppercase sm:text-5xl md:text-6xl'>
-              <span className='block p-2 text-green-400 rounded-md bg-white/70 xl:inline contrast-125 decoration-4'>
+              <span className='block p-2 text-green-400 rounded-md bg-white/70'>
                 Theater Major
               </span>
               <span className='px-3 m-1 text-gray-900'>turned</span>
