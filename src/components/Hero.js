@@ -48,7 +48,7 @@ const Hero = () => {
                   <div className='flex items-center flex-1 md:absolute md:inset-y-0 md:left-0'>
                     <div className='flex items-center justify-between w-full md:w-auto'>
                       <a href='#'>
-                        <span className='sr-only'>Workflow</span>
+                        <span className='sr-only'>ToanCode</span>
                         <img
                           className='w-auto h-12 lg:h-14 sm:h-10 hover:opacity-75'
                           src='https://media.publit.io/file/tplport/noun_coding_2985075-1.svg'
@@ -145,14 +145,15 @@ const Hero = () => {
           )}
         </Popover>
 
-        <main className='px-4 m-4 mx-auto max-w-7xl sm:mt-24 '>
-          <div className='p-4 text-center border-white rounded-md shadow-xl md:backdrop-filter lg:backdrop-filter md:backdrop-blur lg:backdrop-blur-md heropattern-texture-gray-100'>
+        <main className='px-4 py-2 m-4 mx-auto max-w-7xl sm:mt-24 '>
+          <div className='p-6 text-center rounded-md shadow-xl lg:p-8 md:p-7 md:backdrop-filter lg:backdrop-filter md:backdrop-blur lg:backdrop-blur-md heropattern-texture-gray-100'>
             <h1 className='text-4xl tracking-tight text-center text-white uppercase sm:text-5xl md:text-6xl'>
-              <span className='block text-green-400 xl:inline'>
-                Theater Major turned {""}
+              <span className='block p-2 text-green-400 rounded-md bg-white/70 xl:inline contrast-125 decoration-4'>
+                Theater Major
               </span>
-              <span className='block text-blue-500 xl:inline'>
-                React Developer.
+              <span className='px-3 m-1 text-gray-900'>turned</span>
+              <span className='block text-blue-500 underline lg:mt-3 xl:inline decoration-solid decoration-pink-500 underline-offset-8'>
+                React Developer
               </span>
             </h1>
 

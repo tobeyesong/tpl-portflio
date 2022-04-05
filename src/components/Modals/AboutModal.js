@@ -2,10 +2,37 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { BookOpenIcon } from "@heroicons/react/outline";
+import { ChatAltIcon } from "@heroicons/react/outline";
 import LandingPage from "../Pages/LandingPage";
 
 import { Navigate } from "react-router-dom";
+import { FaStackOverflow, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+const navigation = {
+  social: [
+    {
+      name: "Github",
+      href: "https://github.com/tobeyesong",
+      icon: () => (
+        <FaGithubSquare className='w-8 h-8 text-gray-900 transition ease-in hover:text-red-600' />
+      ),
+    },
+
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/toan-lam-69a429103/",
+      icon: () => (
+        <FaLinkedin className='w-8 h-8 text-gray-900 transition ease-in hover:text-red-600' />
+      ),
+    },
+    {
+      name: "StackOverFlow",
+      href: "https://stackoverflow.com/users/16131535/toan-lam",
+      icon: () => (
+        <FaStackOverflow className='w-8 h-8 text-gray-900 transition ease-in hover:text-red-600' />
+      ),
+    },
+  ],
+};
 
 export default function Example() {
   const [open, setOpen] = useState(true);
@@ -52,42 +79,44 @@ export default function Example() {
               <div className='inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6'>
                 <div>
                   <div className='flex items-center justify-center w-12 h-12 mx-auto bg-green-100 rounded-full'>
-                    <BookOpenIcon
+                    <ChatAltIcon
                       className='w-6 h-6 text-green-600'
                       aria-hidden='true'
                     />
                   </div>
                   <div className='mt-3 text-left sm:mt-5'>
-                    <Dialog.Title
-                      as='h3'
-                      className='text-lg font-medium leading-6 text-gray-900'>
-                      So here's the story...
-                    </Dialog.Title>
-                    <div className='mt-2'>
-                      <p className='text-sm text-gray-500'>
-                        I graduated at Cal State Long Beach with a BA in Theater
-                        Arts in 2016.
-                      </p>
-                      <p className='pt-3 text-sm text-gray-500'>
-                        In 2019, I moved to Mill Valley and I started doing
-                        Stand-Up Comedy in the Bay Area.
-                      </p>
-                      <p className='pt-3 text-sm text-gray-500'>
-                        In 2020, the Pandemic happened and I seized it as I saw
-                        it as a once in a lifetime opportunity to start over
-                        again.
-                      </p>
-                      <p className='pt-3 text-sm text-gray-500'>
-                        Just like that, I began my coding journey on March 2020,
-                        and I never gave up. Sometimes, you just know when to
-                        start something new and although it wasn't all sunshine
-                        and rainbows, my mistakes carved the path to my faith in
-                        the journey.
-                      </p>
-                      <p className='pt-3 text-sm text-gray-500'>
-                        This portfolio is the culmination of my perserverance in
-                        fighting for something I believe in.
-                      </p>
+                    <div className='space-y-4'>
+                      <div className='aspect-w-3 aspect-h-2'>
+                        <img
+                          className='object-cover rounded-lg shadow-lg'
+                          src='https://media.publit.io/file/smirkBeach.jpeg'
+                          alt=''
+                        />
+                      </div>
+                      <div className='space-y-1 text-lg font-medium leading-6'>
+                        <h3>Toan Lam</h3>
+                        <p className='text-indigo-600'>React Developer</p>
+                      </div>
+                      <div className='text-lg'>
+                        <p className='text-gray-500'>
+                          I graduated at Cal State Long Beach with a BA in
+                          Theater Arts. I am self taught developer. Mainly in
+                          the MERN stack. This portfolio is the culmination of
+                          my expertise. However, I do look forward to learning
+                          Python and TypeScript soon.
+                        </p>
+                      </div>
+
+                      <ul role='list' className='flex space-x-5'>
+                        <li className='flex'>
+                          {navigation.social.map((item) => (
+                            <a key={item.name} href={item.href}>
+                              <span className='sr-only'>{item.name}</span>
+                              <item.icon aria-hidden='true' />
+                            </a>
+                          ))}
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
