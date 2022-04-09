@@ -5,6 +5,7 @@ import Hero from "../Hero";
 import Skills from "../Skills";
 import Projects from "../Projects";
 import Education from "../Education";
+import Blog from "../Blog";
 import ContactForm from "../ContactForm";
 import Footer from "../Footer";
 import { Toaster } from "react-hot-toast";
@@ -17,6 +18,7 @@ const LandingPage = () => {
       <Skills />
       <Projects />
       <Education />
+      <Blog />
       <ContactForm />
       <Footer />
     </div>

@@ -148,7 +148,7 @@ const Hero = () => {
         <main className='px-4 py-2 m-4 mx-auto max-w-7xl sm:mt-24 '>
           <div className='p-6 text-center rounded-md shadow-xl lg:p-8 md:p-7 md:backdrop-filter lg:backdrop-filter md:backdrop-blur lg:backdrop-blur-md heropattern-texture-gray-100'>
             <h1 className='text-4xl tracking-tight text-center text-white uppercase sm:text-5xl md:text-6xl'>
-              <span className='block p-2 text-green-400 rounded-md bg-white/70'>
+              <span className='block p-2 text-green-400 rounded-md lg:inline-block bg-white/70'>
                 Theater Major
               </span>
               <span className='px-3 m-1 text-gray-900'>turned</span>

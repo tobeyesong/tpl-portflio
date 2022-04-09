@@ -95,7 +95,9 @@ export default function Example() {
                       </div>
                       <div className='space-y-1 text-lg font-medium leading-6'>
                         <h3>Toan Lam</h3>
-                        <p className='text-indigo-600'>React Developer</p>
+                        <p className='text-amber-700'>
+                          Self-Taught Front-End Developer
+                        </p>
                       </div>
                       <div className='text-lg'>
                         <p className='text-gray-500'>
