@@ -7,13 +7,27 @@ const posts = [
   {
     title: "How to submit a form on Netlify with React Final Form",
     href: "https://medium.com/@toanlam01/how-to-submit-a-form-on-netlify-with-react-final-form-880c528bae74",
-    category: { name: "Article", href: "#" },
+    category: { name: "Article" },
     description:
       "It can be a little tricky submitting your form on Netlift with React Final Form. Here's how step by step.",
-    date: "Apr 7, 2022",
     datetime: "2022-04-07",
     imageUrl: "https://miro.medium.com/max/1400/1*RRu8tiEP8qiCZiZ0bBKB8A.jpeg",
     readingTime: "3 min",
+    author: {
+      name: "Toan Lam",
+      href: "https://medium.com/@toanlam01",
+      imageUrl: "https://media.publit.io/file/smirkBeach.jpeg",
+    },
+  },
+  {
+    title: "How to connect Algolia API to your MongoDB API with the MERN stack",
+    href: "https://medium.com/@toanlam01/how-to-connect-algolia-api-to-your-mongodb-api-with-the-mern-stack-5135113b0f9",
+    category: { name: "Article" },
+    description:
+      "For this to work, I assume you have already set up your MERN or whichever full-stack app is set up already with MongoDB.",
+    datetime: "2022-04-23",
+    imageUrl: "https://miro.medium.com/max/700/1*zvLcyxB6RW5AW6nymUCgMw.jpeg",
+    readingTime: "2 min",
     author: {
       name: "Toan Lam",
       href: "https://medium.com/@toanlam01",
@@ -31,30 +45,27 @@ const Blog = () => {
       <div className='relative mx-auto max-w-7xl'>
         <div className='text-center '>
           <h2 className='text-base font-semibold tracking-wider text-center text-gray-600 uppercase lg:text-2xl '>
-            Medium Post
+            Medium Posts
           </h2>
-          <p className='max-w-2xl mx-auto mt-3 text-xl text-gray-500 sm:mt-4'>
-            Here are my Medium posts.
-          </p>
         </div>
         <div className='grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none'>
           {posts.map((post) => (
             <div
               key={post.title}
               className='flex flex-col overflow-hidden rounded-lg shadow-lg'>
-              <div className='flex-shrink-0'>
+              <p className='flex-shrink-0'>
                 <img
                   className='object-cover w-full h-48'
                   src={post.imageUrl}
                   alt=''
                 />
-              </div>
+              </p>
               <div className='flex flex-col justify-between flex-1 p-6 bg-white'>
                 <div className='flex-1'>
                   <p className='text-sm font-medium text-indigo-600'>
-                    <a href={post.category.href} className='hover:underline'>
+                    <div href={post.category.href} className='hover:underline'>
                       {post.category.name}
-                    </a>
+                    </div>
                   </p>
                   <a href={post.href} className='block mt-2'>
                     <p className='text-xl font-semibold text-gray-900'>
@@ -83,7 +94,6 @@ const Blog = () => {
                       </a>
                     </p>
                     <div className='flex space-x-1 text-sm text-gray-500'>
-                      <time dateTime={post.datetime}>{post.date}</time>
                       <span aria-hidden='true'>&middot;</span>
                       <span>{post.readingTime} read</span>
                     </div>
