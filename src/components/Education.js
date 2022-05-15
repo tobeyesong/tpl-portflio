@@ -19,7 +19,7 @@ const Education = () => {
               </div>
             </div>
 
-            <div className='relative text-right uppercase rounded-md bg-project-pattern lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:grid lg:grid-cols-10 lg:items-center'>
+            <div className='relative text-right uppercase rounded-b-md bg-project-pattern lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:grid lg:grid-cols-10 lg:items-center'>
               <div className='relative max-w-md px-4 py-12 mx-auto space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6'>
                 <p className='text-white text-md'>CSU LONG BEACH</p>
                 <p className='text-white text-md'>2016</p>

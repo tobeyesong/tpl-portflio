@@ -70,7 +70,7 @@ const Projects = () => {
                 <img
                   src={project.imageUrl}
                   alt='projectImage'
-                  className='object-cover w-full h-full rounded-l-md'
+                  className='object-cover w-full h-full rounded-t-md'
                 />
               </div>
               <div className='relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-16'>

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 
 import "@lottiefiles/lottie-player";
-import { ExternalLinkIcon } from "@heroicons/react/outline";
+import { ExternalLinkIcon, StarIcon } from "@heroicons/react/outline";
 
 import Footer from "../Footer";
 import AltHeader from "../AltHeader";
@@ -167,13 +167,27 @@ const ProjectPage = () => {
           <div className='mt-3 shadow sm:mt-0 '>
             <a
               href='https://passmanmern.herokuapp.com/'
-              className='flex items-center justify-center py-2 font-medium text-gray-900 uppercase bg-cyan-100 hover:bg-cyan-500 hover:text-white rounded-t-md '>
-              Live Site
+              className='flex items-center justify-center py-2 font-medium text-gray-900 uppercase bg-cyan-100 hover:bg-cyan-500 hover:text-amber-200 rounded-t-md '>
+              <StarIcon className='w-10 h-10 p-2' /> Live Site
+            </a>
+            <a
+              href='https://github.com/tobeyesong/passmanv2'
+              className='flex items-center justify-center py-2 font-medium text-gray-900 uppercase bg-cyan-100 hover:bg-cyan-500 hover:text-white '>
+              <img
+                src=' https://media.publit.io/file/tplport/noun-pull-request-1468353.svg'
+                alt=''
+                className='w-10 h-10 p-2'
+              />
+              Github Repo
             </a>
 
             <a
               href='https://passmandemo.herokuapp.com/dashboard'
               className='flex items-center justify-center py-2 font-medium uppercase bg-cyan-400 hover:bg-cyan-500 text-gray-50 rounded-b-md'>
+              <ExternalLinkIcon
+                className='w-10 h-10 p-2 text-red-600 '
+                aria-hidden='true'
+              />
               Demo
             </a>
           </div>
@@ -237,8 +251,22 @@ const ProjectPage = () => {
 
           <div className='mt-3 shadow sm:mt-0 '>
             <a
+              href='https://github.com/tobeyesong/expense-tracker-demo'
+              className='flex items-center justify-center py-2 font-medium text-gray-500 uppercase rounded-t-md bg-amber-300 hover:bg-amber-500'>
+              <img
+                src=' https://media.publit.io/file/tplport/noun-pull-request-1468353.svg'
+                alt=''
+                className='w-10 h-10 p-2'
+              />
+              GitHub Repo
+            </a>
+            <a
               href='https://sharp-clarke-ef7e56.netlify.app/'
-              className='flex items-center justify-center py-2 font-medium uppercase rounded-md bg-amber-400 hover:bg-amber-500 text-gray-50'>
+              className='flex items-center justify-center py-2 font-medium uppercase rounded-b-md bg-amber-400 hover:bg-amber-500 text-gray-50'>
+              <ExternalLinkIcon
+                className='w-10 h-10 p-2 text-emerald-600 '
+                aria-hidden='true'
+              />
               Demo
             </a>
           </div>
