@@ -22,7 +22,7 @@ const project = [
       "https://media.publit.io/file/passmanDemoImage/Depositphotos_194290034_L-1.jpg",
     title: "Expense Tracker",
     desc: "Inspired by Mint , MoneyX is a React app made with the Context API for create, read, and delete operations combined with React-Final-Form, and TailwindCSS",
-    demoLink: "https://sharp-clarke-ef7e56.netlify.app/",
+    demoLink: "https://moneyxtracker.netlify.app/",
   },
 ];
 

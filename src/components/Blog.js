@@ -9,7 +9,7 @@ const posts = [
     href: "https://medium.com/@toanlam01/how-to-submit-a-form-on-netlify-with-react-final-form-880c528bae74",
     category: { name: "Article" },
     description:
-      "It can be a little tricky submitting your form on Netlift with React Final Form. Here's how step by step.",
+      "It can be a little tricky submitting your form on Netlify with React Final Form. Here's how step by step.",
     datetime: "2022-04-07",
     imageUrl: "https://miro.medium.com/max/1400/1*RRu8tiEP8qiCZiZ0bBKB8A.jpeg",
     readingTime: "3 min",
