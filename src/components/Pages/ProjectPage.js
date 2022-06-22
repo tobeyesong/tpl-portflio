@@ -261,7 +261,7 @@ const ProjectPage = () => {
               GitHub Repo
             </a>
             <a
-              href='https://sharp-clarke-ef7e56.netlify.app/'
+              href='https://moneyxtracker.netlify.app/'
               className='flex items-center justify-center py-2 font-medium uppercase rounded-b-md bg-amber-400 hover:bg-amber-500 text-gray-50'>
               <ExternalLinkIcon
                 className='w-10 h-10 p-2 text-emerald-600 '

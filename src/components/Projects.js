@@ -6,6 +6,8 @@ import {
   ExternalLinkIcon,
   InformationCircleIcon,
 } from "@heroicons/react/solid";
+
+import MiniProjects from "./MiniProjects";
 const project = [
   {
     name: "Pass-Man",
@@ -16,15 +18,16 @@ const project = [
     desc: "Inspired by LastPass, Pass-Man is a MERN app with full CRUD operations combined with Clearbit API, React-Final-Form, and TailwindCSS",
     demoLink: "https://passmandemo.herokuapp.com/dashboard",
   },
-  {
-    name: "MoneyX",
-    imageUrl:
-      "https://media.publit.io/file/passmanDemoImage/Depositphotos_194290034_L-1.jpg",
-    title: "Expense Tracker",
-    desc: "Inspired by Mint , MoneyX is a React app made with the Context API for create, read, and delete operations combined with React-Final-Form, and TailwindCSS",
-    demoLink: "https://moneyxtracker.netlify.app/",
-  },
 ];
+
+// {
+//   name: "MoneyX",
+//   imageUrl:
+//     "https://media.publit.io/file/passmanDemoImage/Depositphotos_194290034_L-1.jpg",
+//   title: "Expense Tracker",
+//   desc: "Inspired by Mint , MoneyX is a React app made with the Context API for create, read, and delete operations combined with React-Final-Form, and TailwindCSS",
+//   demoLink: "https://moneyxtracker.netlify.app/",
+// },
 
 const Projects = () => {
   return (
@@ -61,6 +64,12 @@ const Projects = () => {
               fill='url(#f210dbf6-a58d-4871-961e-36d5016a0f49)'
             />
           </svg>
+
+          <div className='py-4 space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
+            <h2 className='text-3xl font-normal tracking-tight text-white sm:text-4xl'>
+              Main Project
+            </h2>
+          </div>
 
           {project.map((project) => (
             <div
@@ -106,9 +115,10 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>{" "}
             </div>
           ))}
+          <MiniProjects />
         </div>
       </div>
     </React.Fragment>
