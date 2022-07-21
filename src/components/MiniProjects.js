@@ -19,12 +19,11 @@ const people = [
   },
 
   {
-    name: "Movie Versus",
+    name: "Loan Calculator",
     role: "",
-    imageUrl:
-      "https://media.publit.io/file/tplport/Depositphotos_326328064_L.jpg",
+    imageUrl: "https://media.publit.io/file/Depositphotos_479532604_L.jpg",
     githubUrl: "https://github.com/tobeyesong/movieVersus",
-    demoUrl: "https://movie-versus.vercel.app/",
+    demoUrl: "https://loan-calc-liart.vercel.app/",
   },
   // More people...
 ];

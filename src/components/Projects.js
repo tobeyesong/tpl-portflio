@@ -74,7 +74,7 @@ const Projects = () => {
           {project.map((project) => (
             <div
               key={project.name}
-              className='relative mt-4 mb-6 rounded-md bg-gradient-to-r from-green-400 to-blue-500 ring ring-white ring-offset-2'>
+              className='relative mt-4 mb-6 rounded-md bg-gradient-to-r from-emerald-400 via-emerald-600/30 to-cyan-600/60 ring ring-white ring-offset-2'>
               <div className='h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2'>
                 <img
                   src={project.imageUrl}
