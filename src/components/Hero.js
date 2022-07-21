@@ -77,7 +77,7 @@ const Hero = () => {
                       </Link>
                     ))}
                     <a
-                      href='https://drive.google.com/file/d/1jGOtJl3hesUvvFJemFMuPpF9WwSfk5U1/view?usp=sharing'
+                      href='https://drive.google.com/file/d/1jGOtJl3hesUvvFJemFMuPpF9WwSfk5U1/view'
                       className='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 transition duration-200 ease-in transform bg-white border border-transparent rounded-md shadow-sm hover:bg-red-700 hover:text-white '>
                       <ClipboardListIcon
                         className='w-6 h-6 mr-2 -ml-1'
@@ -130,7 +130,7 @@ const Hero = () => {
                       ))}
 
                       <a
-                        href='https://docs.google.com/document/d/1iSXJaoUHWxuOqHIUMb93Y56xuw0JUHCwKhqzKuQLjYY/edit?usp=sharing'
+                        href='https://drive.google.com/file/d/1jGOtJl3hesUvvFJemFMuPpF9WwSfk5U1/view'
                         className='block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50'>
                         Resume
                       </a>
