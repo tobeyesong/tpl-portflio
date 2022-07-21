@@ -77,7 +77,7 @@ const Hero = () => {
                       </Link>
                     ))}
                     <a
-                      href='https://drive.google.com/file/d/1TNBP4JxUeSwIQwVHR6rqjYsyLxuzttq6/view'
+                      href='https://drive.google.com/file/d/1jGOtJl3hesUvvFJemFMuPpF9WwSfk5U1/view?usp=sharing'
                       className='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 transition duration-200 ease-in transform bg-white border border-transparent rounded-md shadow-sm hover:bg-red-700 hover:text-white '>
                       <ClipboardListIcon
                         className='w-6 h-6 mr-2 -ml-1'
