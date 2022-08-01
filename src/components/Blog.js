@@ -37,11 +37,11 @@ const posts = [
   },
   {
     title: "5 reasons why I think TailwindCSS reigns supreme.",
-    href: "https://medium.com/@toanlam01/how-to-connect-algolia-api-to-your-mongodb-api-with-the-mern-stack-5135113b0f9",
+    href: "https://medium.com/@toanlam01/5-reasons-why-i-think-tailwindcss-reigns-supreme-7af916439f77",
     category: { name: "Article" },
     description:
       "If you are looking for new CSS framework to try, look no further. I highly recommend TailwindCSS.",
-    datetime: "2022-04-23",
+    datetime: "2022-08-01",
 
     imageUrl:
       "https://st3.depositphotos.com/15881914/34536/v/600/depositphotos_345368624-stock-illustration-coding-and-programming-app-in.jpg",
