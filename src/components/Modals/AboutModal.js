@@ -95,17 +95,21 @@ export default function Example() {
                       </div>
                       <div className='space-y-1 text-lg font-medium leading-6'>
                         <h3>Toan Lam</h3>
-                        <p className='text-amber-700'>
-                          Self-Taught Front-End Developer
+                        <p className='text-blue-700'>
+                          Self-Taught Full-Stack Developer
                         </p>
                       </div>
                       <div className='text-lg'>
                         <p className='text-gray-500'>
-                          I graduated at Cal State Long Beach with a BA in
-                          Theater Arts. I am self taught developer. Mainly in
+                          I blend hard skills with soft skills.
+                        </p>
+
+                        <p className='text-gray-500'>
+                          I graduated from Cal State Long Beach with a BA in
+                          Theater Arts. I am a self-taught developer, mainly in
                           the MERN stack. This portfolio is the culmination of
                           my expertise. However, I do look forward to learning
-                          Python and TypeScript soon.
+                          emerging tech.
                         </p>
                       </div>
 

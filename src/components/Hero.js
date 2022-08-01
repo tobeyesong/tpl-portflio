@@ -149,7 +149,7 @@ const Hero = () => {
           <div className='p-6 text-center rounded-md shadow-xl lg:p-8 md:p-7 md:backdrop-filter lg:backdrop-filter md:backdrop-blur lg:backdrop-blur-md heropattern-texture-gray-100'>
             <h1 className='text-4xl tracking-tight text-center text-white uppercase sm:text-5xl md:text-6xl'>
               <span className='block p-2 text-green-400 rounded-md lg:inline-block bg-white/70'>
-                Theater Major
+                Art Major
               </span>
               <span className='px-3 m-1 text-gray-900'>turned</span>
               <span className='block text-blue-500 underline lg:mt-3 xl:inline decoration-solid decoration-pink-500 underline-offset-8'>

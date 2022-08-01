@@ -22,7 +22,7 @@ const people = [
     name: "Loan Calculator",
     role: "",
     imageUrl: "https://media.publit.io/file/Depositphotos_479532604_L.jpg",
-    githubUrl: "https://github.com/tobeyesong/movieVersus",
+    githubUrl: "https://github.com/tobeyesong/loan-calc",
     demoUrl: "https://loan-calc-liart.vercel.app/",
   },
   // More people...
